@@ -1,0 +1,46 @@
+1.LINK
+
+-local:
+http://localhost:8080/WebDatVe/admin/public/PageAdmin/login =>admin
+http://localhost:8080/WebDatVe/user =>user
+
+-Web:
+https://atbmtt.000webhostapp.com/user =>user
+
+
+2.DataBase:
+
+dbName: id6530055_dbcinema1
+dbUser:id6530055_atbmtt	
+DB Host	: localhost
+pass:dvndvn
+
+2.1 Thư mục lưu ảnh bìa phim:
+WebDatVe/admin/public/img
+
+3.Tài khoản:
+ 
+ User:
+ user3@gmail.com/user3@gmail.com
+ user4@gmail.com/user4@gmail.com
+ user5@gmail.com/user5@gmail.com
+ 
+ Admin:
+ user1 / user1
+
+Web:
+https://files.000webhost.com/
+atbmtt/thuphuong1
+
+FileZilla:
+Host Name: files.000webhost.com
+Port: 21
+Username: atbmtt
+pass:dvndvn
+
+4.Thêm
+base_encode(): mã hóa
+base_decode(): giải mã
+
+Expection:
+hash: mã hóa password => k giải mã dc

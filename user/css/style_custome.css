@@ -1,0 +1,9 @@
+  .btn-seat {
+    background:rgb(128, 128, 128);
+    }
+    .btn-seat.highlight {
+    background:rgb(255,0,0);
+	}
+    .btn-seatdisabled{
+    	background:rgb(255,0,0);
+    }
