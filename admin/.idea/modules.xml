@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Admin/.idea/Admin.iml" filepath="$PROJECT_DIR$/../../Admin/.idea/Admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DoAnPHP.iml" filepath="$PROJECT_DIR$/.idea/DoAnPHP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/WebDatVe.iml" filepath="$PROJECT_DIR$/../.idea/WebDatVe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebDatVe/.idea/WebDatVe.iml" filepath="$PROJECT_DIR$/../WebDatVe/.idea/WebDatVe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../applaravel/.idea/applaravel.iml" filepath="$PROJECT_DIR$/../applaravel/.idea/applaravel.iml" />
+    </modules>
+  </component>
+</project>
