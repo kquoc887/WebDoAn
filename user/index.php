@@ -7,7 +7,7 @@
        include("header.html");
        include("../libs/config.php");
        session_start();
-       ?>
+    ?>
     </head>  
     <body>
         <div class="navbar">
@@ -22,8 +22,8 @@
                         <i class="icon-menu"></i>
                     </button>
                     <!-- Main navigation -->
-                    <div class="nav-collapse collapse pull-right">
-                        <ul class="nav" id="top-navigation">
+                    <div class = "nav-collapse collapse pull-right">
+                        <ul class = "nav" id="top-navigation">
                             <li class="active"><a href="#home">Trang Chủ</a></li>
                             <li><a href="#service" id = "mn-datve">Đặt Vé</a></li>
                             <li><a href="#portfolio">Lịch Chiếu</a></li>
