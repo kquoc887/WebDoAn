@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <?php
-       include("header.html");
-      
-       ?>
+include "header.html";
+?>
 <head>
     <title>Trang Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="../libs/css/style.css">
     <link rel="stylesheet" type="text/css" href="../libs/css/themes/flat-blue.css">
 </head>
- 
+
 
 <body class="flat-blue login-page">
 
@@ -39,12 +38,12 @@
                         <i class="icon-menu"></i>
                     </button>
                     <!-- Main navigation -->
-                   
+
                     <!-- End main navigation -->
                 </div>
             </div>
         </div>
-    
+
     <div class="container">
         <div class="login-box">
             <div>
@@ -84,7 +83,7 @@
 
                             </br>
                             <div class="control">
-                                    <label id ="info" style="color: red"></label>                               
+                                    <label id ="info" style="color: red"></label>
                             </div>
                             </form>
                         </div>
@@ -94,13 +93,13 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Javascript Libs -->
     <script type="text/javascript" src="../libs/lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="../libs/lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../libs/lib/js/Chart.min.js"></script>
     <script type="text/javascript" src="../libs/lib/js/bootstrap-switch.min.js"></script>
-    
+
     <script type="text/javascript" src="../libs/lib/js/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="../libs/lib/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../libs/lib/js/dataTables.bootstrap.min.js"></script>
@@ -116,61 +115,61 @@
 <script type="text/javascript">
 
     //Xét validate
-    function validateForm() { //email
-            var x = document.forms["Fr-dangky"]["email"].value;
-            var atpos = x.indexOf("@");
-            var dotpos = x.lastIndexOf(".");
-            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-                alert("Địa chỉ email không hợp lệ!!");
-                return false;
-            }
-            else
-              return true;
-        }
-    function validateTextBox() //textbox user & email 
-    {
-            var user = $("#user").val();
-            var email = $("#email").val();
-            var password = $("#password").val();
-            if(user == "" || email == "" || password == "")
-            {
-                alert("Không được để trống!");
-                return false;
-            }
-            else
-                return true;
+function validateForm()
+{ //email
+    var x = document.forms["Fr-dangky"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Địa chỉ email không hợp lệ!!");
+        return false;
+    }  else {
+      return true;
     }
+}
+
+function validateTextBox() //textbox user & email
+{
+    var user = $("#user").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    if (user == "" || email == "" || password == "") {
+        alert("Không được để trống!");
+        return false;
+    } else {
+        return true;
+    }
+}
 
 //button đăng ký thực hiện ajax bên file user_function
  $("#btn-dangky").click(function(){
-        if(validateForm() && validateTextBox())
-          {
-            var  user= $("#user").val();
-            var email = $("#email").val();
-            var password = $("#password").val();
-            $.ajax({
-            url : "../user/user_function.php", // file xử lý hàm
-            type : "POST", //loại gửi dữ liệu
-            //dataType: "html",  
-            data : {
-              action:"DangKy", // hàm thực hiện bên user_function
-              user: user, // dữ liệu gửi đi
-              email : email,
-              password: password
-              
-              
-            },
-            success: function(data)//data trả về là echo
-            {
-                
-                $("#info").empty(); // xuất ra id info
-                $("#info").append(data);
-                
-             // window.location.href="login.php";
-            }
-            });
-          } 
+    if (validateForm() && validateTextBox()) {
+        var  user= $("#user").val();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        $.ajax({
+        url : "../user/user_function.php", // file xử lý hàm
+        type : "POST", //loại gửi dữ liệu
+        //dataType: "html",
+        data : {
+          action:"DangKy", // hàm thực hiện bên user_function
+          user: user, // dữ liệu gửi đi
+          email : email,
+          password: password
+
+
+        },
+        success: function(data)//data trả về là echo
+        {
+
+            $("#info").empty(); // xuất ra id info
+            $("#info").append(data);
+
+         // window.location.href="login.php";
+        }
         });
+    }
+});
 
 </script>
 
