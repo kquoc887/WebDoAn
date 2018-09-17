@@ -431,17 +431,18 @@ function hienThiPhimAll() {
 		$kq = $db->query($truyvan2);
 		foreach ($kq->fetchAll() as $dong) {
 			echo '<li class="span4 mix now">
-            <div class="thumbnail">
-            <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
-            <a href="#single-project" class="show_hide more" rel="#slidingDiv">
-            <i class="icon-plus"></i>
-            </a>
-            <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
-            <p>' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
-            <div class="mask">
-            <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
-            </div>
-            </li>';
+                      <div class="thumbnail">
+                          <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
+                          <a href="#single-project" class="show_hide more" rel="#slidingDiv">
+                              <i class="icon-plus"></i>
+                          </a>
+                          <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
+                          <p>' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
+                          <div class="mask">
+                              <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
+                          </div>
+                       </div>
+                  </li>';
 
 		}
 	}
@@ -451,18 +452,20 @@ function hienThiPhimAll() {
 		$kq = $db->query($truyvan2);
 		foreach ($kq->fetchAll() as $dong) {
 
-			echo '<li class="span4 mix future">
-         <div class="thumbnail">
-         <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
-         <a href="#single-project" class="show_hide more" rel="#slidingDiv">
-         <i class="icon-plus"></i>
-         </a>
-         <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
-         <p >' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
-         <div class="mask">
-         <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
-         </div>
-         </li>';
+			echo
+				'<li class="span4 mix future">
+                    <div class="thumbnail">
+                        <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
+                        <a href="#single-project" class="show_hide more" rel="#slidingDiv">
+                            <i class="icon-plus"></i>
+                        </a>
+                        <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
+                        <p >' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
+                        <div class="mask">
+                            <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
+                        </div>
+                    </div>
+                </li>';
 		}
 	}
 
@@ -478,15 +481,15 @@ function hienThiPhimSlide() //phim hiện trên slide
 
 	if ($ketqua) {
 		foreach ($ketqua->fetchAll() as $dong) {
-			echo '<div class="da-slide">
-          <h2 class="fittext2">WELCOME TO CINEMA</h2>
-          <h4>' . $dong["TENPHIM"] . '</h4>
-          <p>' . $dong["MIEUTA"] . '</p>
-
-          <div class="da-img">
-          <img src="../admin/public/img/' . $dong["IMAGE"] . '" width="320">
-          </div>
-          </div>';
+			echo
+				'<div class="da-slide">
+                    <h2 class="fittext2">WELCOME TO CINEMA</h2>
+                    <h4>' . $dong["TENPHIM"] . '</h4>
+                    <p>' . $dong["MIEUTA"] . '</p>
+                    <div class="da-img">
+                        <img src="../admin/public/img/' . $dong["IMAGE"] . '" width="320">
+                    </div>
+                </div>';
 		}
 	}
 
@@ -511,7 +514,7 @@ $("#sl-ngaychieu").click(function(){
             success: function(data)//data trả về là echo
             {
 
-               window.location.href='datvebuoc2.php';
+              window.location.href='datvebuoc2.php';
            }
        });
     });
