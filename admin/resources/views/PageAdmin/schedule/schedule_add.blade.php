@@ -17,7 +17,7 @@
                             @endforeach
                         </div>
                     @endif
-                    @if(session('thongbao') )
+                    @if(session('thongbao'))
                         <div class="alert alert-success">
                             {{session('thongbao')}}
                         </div>
@@ -55,19 +55,19 @@
                             <div class="form-inline">
                                 <select class="custom-select-sm" name="Day">
                                     <option value="0">Please Choose Day</option>
-                                    @for($i=1;$i<=31;$i++)
+                                    @for($i = 1; $i <= 31; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
                                     @endfor
                                 </select>
                                 <select class="form-inline" name="Month" >
                                     <option value="0">Please Choose Month</option>
-                                    @for($i=1;$i<=12;$i++)
+                                    @for($i = 1; $i <= 12; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
                                     @endfor
                                 </select>
                                 <select class="custom-select-sm" name="Year">
                                     <option value="0">Please Choose Year</option>
-                                    @for($i=2018;$i<=2030;$i++)
+                                    @for($i = 2018; $i <= 2030; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
                                     @endfor
                                 </select>

@@ -10,14 +10,14 @@
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    @if(count($errors)>0)
+                    @if(count($errors) > 0)
                         <div class="alert alert-danger">
                             @foreach($errors->all() as $err)
                                 {{$err}}<br>
                             @endforeach
                         </div>
                     @endif
-                    @if(session('thongbao') )
+                    @if(session('thongbao'))
                         <div class="alert alert-success">
                             {{session('thongbao')}}
                         </div>
@@ -43,8 +43,8 @@
                         </div>
                         <div class="form-group">
                             <label>Permission</label>
-                            <label class="radio-inline"><input name="rdoStatus" @if($user->ISADMIN==0){{"checked"}}  @endif type="radio" value="0">Normal</label>
-                            <label class="radio-inline"><input name="rdoStatus" @if($user->ISADMIN==1){{"checked"}} @endif value="1" type="radio">Admin</label>
+                            <label class="radio-inline"><input name="rdoStatus" @if($user->ISADMIN == 0){{"checked"}}  @endif type="radio" value="0">Normal</label>
+                            <label class="radio-inline"><input name="rdoStatus" @if($user->ISADMIN == 1){{"checked"}} @endif value="1" type="radio">Admin</label>
                         </div>
                         <button type="submit" class="btn btn-default">USER EDIT</button>
                         <button type="reset" class="btn btn-default">Reset</button>
@@ -58,17 +58,15 @@
 @endsection
 @section('script')
     <script>
-        $(document).ready(function () {
-           $("#changePassword").change(function () {
-              if($(this).is(":checked"))
-              {
-                  $(".password").removeAttr('disabled');
-              }
-              else
-              {
-                  $(".password").attr('disabled','');
-              }
-           });
+        $(document).ready(function() {
+            $("#changePassword").change(function() {
+                if ($(this).is(":checked")) {
+                    $(".password").removeAttr('disabled');
+                }
+                else {
+                    $(".password").attr('disabled', '');
+                }
+            });
         });
     </script>
 @endsection

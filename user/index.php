@@ -524,7 +524,6 @@
 
 //hàm tìm kiếm phim     
        $("#search").click(function(){
-
         if($("#txtsearch").val()!= "" )
         {          
                 var txtsearch = $("#txtsearch").val();

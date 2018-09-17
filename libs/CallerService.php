@@ -27,7 +27,7 @@ $version = VERSION;
 */
 
 
-public function hash_call($methodName, $nvpStr)
+function hash_call($methodName, $nvpStr)
 {
     //declaring of global variables
     global $api_endpoint, $version, $api_userName, $api_password, $api_signature, $nvp_Header;
@@ -82,7 +82,7 @@ public function hash_call($methodName, $nvpStr)
   * @nvpArray is Associative Array.
   */
 
-public function deformatNVP($nvpStr)
+function deformatNVP($nvpStr)
 {
     $intial = 0;
     $nvpArray = array();
