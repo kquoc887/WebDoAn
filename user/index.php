@@ -86,7 +86,7 @@ if (isset($_SESSION["loginuser"])) {
             <!-- Start first slide -->
 
             <?php
-HienThiPhimSlide();
+hienThiPhimSlide();
 ?>
 
             <!-- End first slide -->
@@ -111,9 +111,11 @@ HienThiPhimSlide();
 
             <select id ="sl-phim">
                 <option value="default">Phim</option>
+
                 <?php
-HienThiTenPhim();
+hienThiTenPhim();
 ?>
+
             </select>
 
             <select id = "sl-rap">
@@ -159,7 +161,7 @@ HienThiTenPhim();
         <!-- Start details for portfolio project 1 -->
         <!--chi tiết phim-->
         <div id="single-project">
-         <div id="slidingDiv" class="toggleDiv row-fluid single-project">
+           <div id="slidingDiv" class="toggleDiv row-fluid single-project">
             <!--ajax HienThiChiTietPhim()-->
         </div>
         <!-- End details for portfolio project 1 -->
@@ -167,7 +169,7 @@ HienThiTenPhim();
         <ul id="portfolio-grid" class="thumbnails row">
 
             <?php
-HienThiPhimAll();
+hienThiPhimAll();
 ?>
 
         </ul>
@@ -319,7 +321,7 @@ include "footer.html";
 
 <?php
 //show phim drop list
-function HienThiTenPhim() {
+function hienThiTenPhim() {
 //if(strtotime($dong2["NGAYCHIEU"]) >= $today && strtotime($dong2["GIOCHIEU"])>strtotime(date("h:i")))
 	$arrMaPhim = array(); // mảng lưu mã phim
 	date_default_timezone_set('Asia/Ho_Chi_Minh'); //xet múi giờ
@@ -327,9 +329,9 @@ function HienThiTenPhim() {
 	$today = date("Y-m-d"); //get ngày hiện tại
 	$today = strtotime($today); //get 1 số tính toán ngày hiện tại
 	$time = strtotime(date("H:i")); //get 1 số là giờ hiện tại
-
 	$truyvan = "SELECT * FROM schedule";
 	$ketqua = $db->query($truyvan);
+
 	if ($ketqua) {
 		foreach ($ketqua->fetchAll() as $dong) {
 			$another_date = $dong["NGAYCHIEU"]; // ngày chiếu của phim
@@ -363,7 +365,7 @@ function HienThiTenPhim() {
 };
 
 //Show hình ảnh phim
-function HienThiPhimAll() {
+function hienThiPhimAll() {
 //172800
 	$arrMaPhimNow = array(); //mảng chứa phim hiện tại
 	$arrMaPhimFuture = array(); // mảng chứa phim tương lai
@@ -375,14 +377,13 @@ function HienThiPhimAll() {
 	$time = strtotime(date("H:i")); // lấy ra chuỗi giờ hiện tại
 	$truyvan = "SELECT * FROM movie"; // select bảng phim
 	$ketqua = $db->query($truyvan); // thực hiện query
-	if ($ketqua) // nếu kết quả true
-	{
+	if ($ketqua) {
+		// nếu kết quả true
 		//xuất ra giao diện trang index
 		foreach ($ketqua->fetchAll() as $dong) {
 			$another_date = strtotime($dong["NGAYBDCHIEU"]);
-			if ($another_date <= $today + 172800) // phim now
-			{
-
+			if ($another_date <= $today + 172800) {
+				// phim now
 				$truyvan1 = "SELECT * FROM schedule WHERE MAPHIM = " . $dong["MAPHIM"];
 				$ketqua1 = $db->query($truyvan1);
 				foreach ($ketqua1 as $dong1) {
@@ -409,7 +410,6 @@ function HienThiPhimAll() {
 					$another_date1 = strtotime($dong1["NGAYCHIEU"]);
 					$another_time = strtotime($dong1["GIOCHIEU"]);
 					if ($another_date1 >= $today) {
-
 						$truyvan1 = 'SELECT MAPHIM FROM movie WHERE MAPHIM = ' . $dong["MAPHIM"] . ';';
 						$ketqua1 = $db->query($truyvan1);
 						foreach ($ketqua1->fetchAll() as $dong1) {
@@ -470,7 +470,7 @@ function HienThiPhimAll() {
 
 //ajax?
 //chạy slide indexx
-function HienThiPhimSlide() //phim hiện trên slide
+function hienThiPhimSlide() //phim hiện trên slide
 {
 	$db = DB::getInstance();
 	$truyvan = "SELECT * FROM movie WHERE ISSLIDE = '1'";
@@ -501,7 +501,7 @@ function HienThiPhimSlide() //phim hiện trên slide
 $("#sl-ngaychieu").click(function(){
     $("#btn-datve").click(function(){
 
-       $.ajax({
+     $.ajax({
         url : "../user/user_function.php",
         type : "POST",
             //dataType: "html",
@@ -511,18 +511,17 @@ $("#sl-ngaychieu").click(function(){
             success: function(data)//data trả về là echo
             {
 
-             window.location.href='datvebuoc2.php';
-         }
-     });
-   });
+               window.location.href='datvebuoc2.php';
+           }
+       });
+    });
 });
 
 
 //hàm tìm kiếm phim
 $("#search").click(function(){
 
-    if($("#txtsearch").val()!= "" )
-    {
+    if ($("#txtsearch").val()!= "" ) {
         var txtsearch = $("#txtsearch").val();
         $.ajax({
             url : "../user/user_function.php",
@@ -539,28 +538,22 @@ $("#search").click(function(){
           }
       });
     }
-    else
-    {
-
-    }
-
 });
 
 //hàm thoát ajax
 $("#btn-logout").click(function(){
-   $.ajax({
+ $.ajax({
     url : "../user/user_function.php",
     type : "POST",
             //dataType: "html",
             data : {
               action:"LogOut",
-
-          },
+            },
             success: function(data)//data trả về là echo
             {
               window.location.href= "index.php";
-          }
-      });
+            }
+    });
 });
 
 
