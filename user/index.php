@@ -17,6 +17,7 @@ session_start();
                     <img src="images/logo3.png" width="120" height="40" alt="Logo" />
                     <!-- This is website logo -->
                 </a>
+                <div></div>
                 <!-- Navigation button, visible on small resolution -->
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <i class="icon-menu"></i>
