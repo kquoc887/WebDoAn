@@ -3,9 +3,8 @@
 <!DOCTYPE html>
 <html>
 <?php
-       include("header.html");
-      
-       ?>
+include "header.html";
+?>
 <head>
     <title>Trang Error</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +52,7 @@
     <script type="text/javascript" src="../admin/lib/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../admin/lib/js/Chart.min.js"></script>
     <script type="text/javascript" src="../admin/lib/js/bootstrap-switch.min.js"></script>
-    
+
     <script type="text/javascript" src="../admin/lib/js/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="../admin/lib/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../admin/lib/js/dataTables.bootstrap.min.js"></script>
