@@ -1,4 +1,61 @@
 ///////////////////////////////////Trang Index////////////////////////////////
+$(document).ready(function(){
+	$("#btn-datve").click(function(){
+
+ $.ajax({
+    url : "../user/user_function.php",
+    type : "POST",
+        //dataType: "html",
+        data : {
+          action:"LoadManHinh"
+      },
+        success: function(data)//data trả về là echo
+        {
+
+           window.location.href='datvebuoc2.php';
+       }
+   });
+});
+
+
+//hàm tìm kiếm phim
+$("#search").click(function(){
+
+    if ($("#txtsearch").val()!= "" ) {
+        var txtsearch = $("#txtsearch").val();
+        $.ajax({
+            url : "../user/user_function.php",
+            type : "POST",
+            //dataType: "html",
+            data : {
+              action:"TimKiem",
+              txtsearch :txtsearch
+          },
+            success: function(data)//data trả về là echo
+            {
+                window.location.href = data;
+              // console.log(data);
+          }
+      });
+    }
+});
+
+//hàm thoát ajax
+$("#btn-logout").click(function(){
+ $.ajax({
+    url : "../user/user_function.php",
+    type : "POST",
+            //dataType: "html",
+            data : {
+              action:"LogOut",
+            },
+            success: function(data)//data trả về là echo
+            {
+              window.location.href= "index.php";
+            }
+    });
+});
+
 //chon rap 
 $("#sl-phim").change(function()
 {
@@ -149,61 +206,9 @@ $("#btn-datve").click(function()
 			}
 	});
 });
-
-    $("#btn-datve").click(function(){
-
-     $.ajax({
-        url : "../user/user_function.php",
-        type : "POST",
-            //dataType: "html",
-            data : {
-              action:"LoadManHinh"
-          },
-            success: function(data)//data trả về là echo
-            {
-
-               window.location.href='datvebuoc2.php';
-           }
-       });
-    });
-
-
-//hàm tìm kiếm phim
-$("#search").click(function(){
-
-    if ($("#txtsearch").val()!= "" ) {
-        var txtsearch = $("#txtsearch").val();
-        $.ajax({
-            url : "../user/user_function.php",
-            type : "POST",
-            //dataType: "html",
-            data : {
-              action:"TimKiem",
-              txtsearch :txtsearch
-          },
-            success: function(data)//data trả về là echo
-            {
-                window.location.href = data;
-              // console.log(data);
-          }
-      });
-    }
 });
 
-//hàm thoát ajax
-$("#btn-logout").click(function(){
- $.ajax({
-    url : "../user/user_function.php",
-    type : "POST",
-            //dataType: "html",
-            data : {
-              action:"LogOut",
-            },
-            success: function(data)//data trả về là echo
-            {
-              window.location.href= "index.php";
-            }
-    });
-});
+
+
 
 
