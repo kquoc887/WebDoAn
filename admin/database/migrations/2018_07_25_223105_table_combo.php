@@ -14,9 +14,9 @@ class TableCombo extends Migration
     public function up()
     {
         //tạo bảng có tên là combo trong database.
-        Schema::create('combo',function ($table){
+        Schema::create('combo', function ($table) {
             $table->increments('MACOMBO');//Tạo cột MACOMBO là khóa chinh và tự động tăng
-            $table->string('TENCOMBO',200);//Tạo cột TENCOMBO có kiểu là varchar độ dài là 200
+            $table->string('TENCOMBO', 200);//Tạo cột TENCOMBO có kiểu là varchar độ dài là 200
             $table->integer('GIACOMBO');//Tạo cột GIACOMBO có kiểu là int
             $table->timestamps();
         });

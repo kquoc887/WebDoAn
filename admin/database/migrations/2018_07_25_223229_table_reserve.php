@@ -14,13 +14,13 @@ class TableReserve extends Migration
     public function up()
     {
         //tạo bảng tên là reserve trong database
-        Schema::create('reserve',function ($table){
-            $table->string('MADATCHO',50);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
-            $table->string('EMAIL',100);//Tạo cột EMAIL CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 100.
+        Schema::create('reserve', function ($table) {
+            $table->string('MADATCHO', 50);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
+            $table->string('EMAIL', 100);//Tạo cột EMAIL CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 100.
             $table->integer('MAPHIM')->unsigned();//TẠO CỘT MAPHIM là khóa ngoại có kiểu là int
             $table->integer('MARAP')->unsigned();//Tạo cột MARAP LÀ KHÓA NGOẠI CÓ KIỂU LÀ INT.
-            $table->string('NGAYDAT',10);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
-            $table->string('GIODAT',5);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
+            $table->string('NGAYDAT', 10);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
+            $table->string('GIODAT', 5);//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
             $table->integer('MACOMBO')->unsigned();//TAO CỘT MACOMBO LÀ NGOẠI CÓ KIỂU INT.
             $table->integer('SOLUONG');//Tạo cột MADATCHO CÓ KIEUR LÀ VARCHAR DỘ DÀI LÀ 50.
             $table->primary('MADATCHO');//Tạo khóa chính là CỘT MADATCHO

@@ -14,9 +14,9 @@ class TableCategory extends Migration
     public function up()
     {
         //Tạo bảng category trong database
-        Schema::create('category',function ($table){
+        Schema::create('category', function ($table) {
            $table->increments('MALOAIPHIM');//Tạo cột MALOAIPHIM là khóa chính và tự động tăng
-           $table->string('TENLOAIPHIM',200);//Tạo cột TEENLOAIPHIM có kiểu là varchar với lenght 200.
+           $table->string('TENLOAIPHIM', 200);//Tạo cột TEENLOAIPHIM có kiểu là varchar với lenght 200.
            $table->timestamps();//Tạo ra 2 cột update và delete.
         });
     }

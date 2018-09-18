@@ -14,9 +14,9 @@ class TableRap extends Migration
     public function up()
     {
         //tạo bảng có tên là rap trong database
-        Schema::create('rap',function ($table){
+        Schema::create('rap', function ($table) {
            $table->increments('MARAP');//Tạo cột MARAP là khóa chính và tự động tăng.
-           $table->string('TENRAP',100);//tạo cột TENRAP có kiểu là varchar
+           $table->string('TENRAP', 100);//tạo cột TENRAP có kiểu là varchar
            $table->timestamps();
         });
     }

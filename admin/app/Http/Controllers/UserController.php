@@ -12,7 +12,7 @@ class UserController extends Controller
     public function getUserList()
     {
         $user = User::all();
-        return view ('PageAdmin.user.user_list',['user'=>$user]);
+        return view ('PageAdmin.user.user_list', ['user' => $user]);
     }
     //Hàm này có nhiệm vụ để xóa một user
     public function getUserDelete($id)
@@ -29,14 +29,14 @@ class UserController extends Controller
     // Hàm này sẽ xử lý thêm một User.
     public function postUserAdd(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
                 //Tạo ra những ràng buộc để việc người dùng nhập các thông tin của User nếu thông tin không hợp lệ thì nó sẽ thông báo ra các lỗi.
                 'txtUserName' => 'required|min:3',
                 'txtEmail' => 'required|email|unique:users,EMAIL',
                 'txtPass' => 'required|min:6|max:32',
                 'txtPassAgain' => 'required|same:txtPass',
                 'rdoStatus' => 'required',
-            ],[
+            ], [
                 'txtUserName.required' => 'Bạn chưa nhập tên User Name',
                 'txtUserName.min' => 'UsserName phải từ 3 ký tự trở lên',
                 'txtEmail.required' => 'Bạn chưa nhập Email',
@@ -55,7 +55,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->txtPass);//password bị mã hóa thành Hash
         $user->ISADMIN = $request->rdoStatus;
         $user->save();// tiến hành thêm user mới vào bảng users trong CSDL
-        return redirect('PageAdmin/user/user_add')->with('thongbao','Bạn đã thêm thành công');//trả người dùng về giao diện thêm user và thông báo đã thêm thành công.
+        return redirect('PageAdmin/user/user_add')->with('thongbao', 'Bạn đã thêm thành công');//trả người dùng về giao diện thêm user và thông báo đã thêm thành công.
     }
     //Hàm này sẽ trả về giao diện chỉnh sữa thông tin của một User
     public function getUserEdit($id)
@@ -67,9 +67,9 @@ class UserController extends Controller
     public function postUserEdit(Request $request, $id)
     {
         $user = User::find($id);//tìm user cần chỉnh sữa
-        $this->validate($request,[
+        $this->validate($request, [
                 'txtUserName' => 'required|min:3',
-            ],[
+            ], [
                 'txtUserName.required' => 'Bạn chưa nhập tên User Name',
                 'txtUserName.min' => 'UsserName phải từ 3 ký tự trở lên',
             ]);//TẠo ra các ràng buộc để bắt lỗi người dùng nhập thông tin trên view sữa thông tin một user.
@@ -79,11 +79,11 @@ class UserController extends Controller
         $user->ISADMIN = $request->rdoStatus;
         //Nếu người dùng có check vào ô checkbox trên view sữa thông tin một user thì sẽ cập nhật lại password cho user.
         if ($request->changePassword == "on") {
-            $this->validate($request,[
+            $this->validate($request, [
 
                     'txtPass' => 'required|min:6|max:32',
                     'txtPassAgain' => 'required|same:txtPass',
-                ],[
+                ], [
 
                     'txtPass.required' => 'Bạn chưa nhập PassWord',
                     'txtPass.min' => 'PassWord có độ dài từ 6 đến 32 ký tự',
@@ -107,11 +107,11 @@ class UserController extends Controller
     //Xử lý việc người dùng login vào trang admin.
     public function postAdminLogin(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
                 //Tạo ra những ràng buộc để kiểm tra tình hợp lệ mà người dùng nhập vào.
                 'txtUser' => 'required|min:3',
                 'txtPass' => 'required|min:3|max:32',
-            ],[
+            ], [
                 'txtUser.required' => 'Bạn chưa nhập UserName',
                 'txtUser.min' => 'UserName phải từ 3 ký tự trở lên',
                 'txtPass.required' => 'Bạn chưa nhập PassWord',

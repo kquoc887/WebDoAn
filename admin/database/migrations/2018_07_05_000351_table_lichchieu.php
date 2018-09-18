@@ -14,13 +14,13 @@ class TableLichchieu extends Migration
     public function up()
     {
         //
-        Schema::create('schedule',function ($table){
+        Schema::create('schedule', function ($table) {
             $table->integer('MAPHIM')->unsigned();//Tạo cột MAPHIM là khóa ngoại
-            $table->string('NGAYCHIEU',100);//TẠO cột NGAYCHIEU có kiểu là varchar
+            $table->string('NGAYCHIEU', 100);//TẠO cột NGAYCHIEU có kiểu là varchar
             $table->string('GIOCHIEU');//Tạo cột GIOCHIEU có kiểu là varchar.
             $table->integer('MARAP')->unsigned();//TẠO cột MARAP là khóa ngoại
             $table->integer('PRICE');//Tạo cột PRICE có kiểu là integer.
-            $table ->primary ([ 'MAPHIM','GIOCHIEU','MARAP' ]);//Tạo khóa chỉnh cho bảng gồm 3 cột MAPHIM,GIOCHIEU,MARAP
+            $table ->primary (['MAPHIM', 'GIOCHIEU', 'MARAP']);//Tạo khóa chỉnh cho bảng gồm 3 cột MAPHIM,GIOCHIEU,MARAP
             $table->timestamps();//tao ra 2 cột update và delete
             $table->foreign('MAPHIM')->references('MAPHIM')->on('movie')->onDelete('cascade');//tạo khóa ngoại MAPHIM tham chiếu đến khóa chinh MAPIHM bên bảng movie
             $table->foreign('MARAP')->references('MARAP')->on('rap')->onDelete('cascade');// tạo khóa ngoại MARAP tham chiếu đến khóa chinh MARAP bên bảng rap.
