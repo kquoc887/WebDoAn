@@ -10,7 +10,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                @if(count($errors)>0)
+                    @if(count($errors)>0)
                         <div class="alert alert-danger">
                             @foreach($errors->all() as $err)
                                 {{$err}}<br>
@@ -22,12 +22,13 @@
                         <div class="alert alert-success">
                             {{session('thongbao')}}
                         </div>
-                        @endif
+                    @endif
                     <form action="PageAdmin/category/category_edit/{{$category->MALOAIPHIM}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <label>Category Name</label>
-                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name" value="{{$category->TENLOAIPHIM}}" />
+                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name"
+                                   value="{{$category->TENLOAIPHIM}}"/>
                         </div>
                         <button type="submit" class="btn btn-default">Category Edit</button>
                         <!-- Khi bấm vào nút submit này nó sẽ chuyển đến một trang mà ta quy định trong action.

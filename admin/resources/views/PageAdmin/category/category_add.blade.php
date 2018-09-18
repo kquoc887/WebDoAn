@@ -22,12 +22,12 @@
                         <div class="alert alert-success">
                             {{session('thongbao')}}
                         </div>
-                        @endif
+                    @endif
                     <form action="{{route('post_category_add')}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <label>Category Name</label>
-                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name" />
+                            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name"/>
                         </div>
                         <button type="submit" class="btn btn-default">Category Add</button>
                         <!-- Khi bấm vào nút submit này nó sẽ chuyển đến một trang mà ta quy định trong action.

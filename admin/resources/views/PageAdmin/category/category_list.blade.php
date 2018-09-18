@@ -15,7 +15,7 @@
                         {{session('thongbao')}}
                     </div>
                 @endif
-                <table class="table table-striped table-bordered table-hover" >
+                <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr align="center">
                         <th>ID</th>
@@ -32,14 +32,16 @@
                             <td>{{$value->TENLOAIPHIM}}</td>
                             <!-- Đường dẫn href là 1 route -->
                             <!-- Khi ta bấm vào một thẻ a nó sẽ gọi một route có đường dẫn tương ứng để thực hiện -->
-                            <td class="center"><a href="PageAdmin/category/category_delete/{{$value->MALOAIPHIM}}"> Delete</a></td>
-                            <td class="center"><a href="PageAdmin/category/category_edit/{{$value->MALOAIPHIM}}">Edit</a></td>
+                            <td class="center"><a href="PageAdmin/category/category_delete/{{$value->MALOAIPHIM}}">
+                                    Delete</a></td>
+                            <td class="center"><a
+                                        href="PageAdmin/category/category_edit/{{$value->MALOAIPHIM}}">Edit</a></td>
                         </tr>
                     @endforeach
-                        <tr>
+                    <tr>
 
-                            <td colspan="4" style="text-align: right">{!! $category->links() !!}</td>
-                        </tr>
+                        <td colspan="4" style="text-align: right">{!! $category->links() !!}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
