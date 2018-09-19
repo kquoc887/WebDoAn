@@ -92,7 +92,7 @@
         <!-- All slides centred in container element -->
         <div class="container">
             <!-- Start first slide -->
-
+            <h5>Các slide</h5>
             <?php
             hienThiPhimSlide();
             ?>
