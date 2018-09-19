@@ -2,8 +2,8 @@
 <html>
 <?php
        include("header.html");
-      
-       ?>
+
+    ?>
 <head>
     <title>Trang Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -141,7 +141,7 @@
                 return true;
     }
 
-//button đăng ký thực hiện ajax bên file user_function
+    //button đăng ký thực hiện ajax bên file user_function
  $("#btn-dangky").click(function(){
         if(validateForm() && validateTextBox())
           {
