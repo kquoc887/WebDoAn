@@ -44,14 +44,15 @@ session_start();
     <div style="float: right; margin-right:100px ;color: white; font-size:35px">
         <ul>
             <li class="dropdown profile">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php
-                    if (isset($_SESSION["loginuser"])) {
-                        echo $_SESSION["loginuser"];
-                    }
-                    ?><span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <?php
+                        if (isset($_SESSION["loginuser"])) {
+                            echo $_SESSION["loginuser"];
+                        }
+                    ?>
+                    <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInDown" style="width: 200px;>
-                                <li class=" profile-img
-                ">
+                                <li class=" profile-img">
                 <img src="images/128px.png" class="profile-img" style="margin-left: 25px;">
             </li>
             <li>
@@ -85,27 +86,24 @@ session_start();
 </div>
 
 <!-- Javascript Libs -->
-<script type="text/javascript" src="../libs/lib/js/jquery.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/Chart.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/bootstrap-switch.min.js"></script>
-
-<script type="text/javascript" src="../libs/lib/js/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/select2.full.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/ace.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/mode-html.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/theme-github.js"></script>
+<script  src="../libs/lib/js/jquery.min.js"></script>
+<script  src="../libs/lib/js/bootstrap.min.js"></script>
+<script  src="../libs/lib/js/Chart.min.js"></script>
+<script  src="../libs/lib/js/bootstrap-switch.min.js"></script>
+<script  src="../libs/lib/js/jquery.matchHeight-min.js"></script>
+<script  src="../libs/lib/js/jquery.dataTables.min.js"></script>
+<script  src="../libs/lib/js/dataTables.bootstrap.min.js"></script>
+<script  src="../libs/lib/js/select2.full.min.js"></script>
+<script  src="../libs/lib/js/ace/ace.js"></script>
+<script  src="../libs/lib/js/ace/mode-html.js"></script>
+<script  src="../libs/lib/js/ace/theme-github.js"></script>
 <!-- Javascript -->
 <script type="text/javascript" src="../libs/js/app.js"></script>
-
+<script src="js/custom.js"></script>
 </body>
-
 </html>
 
 <?php
-
 //hiện thị kết quả tìm kiếm
 function HienThiPhim()
 {
@@ -116,12 +114,13 @@ function HienThiPhim()
         $ketqua = $db->query($truyvan);
         foreach ($ketqua->fetchAll() as $dong) {
             echo '<tr>
-           <td> <div class="span6">
-                          <iframe  width="450" height="300" src="' . $dong["URL"] . '" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                   </td>
-                   <td>     
-                        <div class="span6" >
+                      <td> 
+                          <div class="span6">
+                              <iframe  width="450" height="300" src="' . $dong["URL"] . '" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                      </td>
+                      <td>     
+                          <div class="span6" >
                             <div class="project-description">
                                 <div class="project-title clearfix">
                                     <h3 style="color: black">Chi tiết phim</h3>
@@ -137,33 +136,15 @@ function HienThiPhim()
                                     <div style="color: black">' . 'Miêu tả: ' . $dong["MIEUTA"] . '</div>
                                 </div>
                         </div>
-                    </td></tr>
-                    ';
+                    </td>
+                </tr>';
         }
     }
 
 }
 
 ?>
-<script type="text/javascript">
 
-    $("#btn-logout").click(function () {
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            //dataType: "html",
-            data: {
-                action: "LogOut", //gọi ajax log out
-
-            },
-            success: function (data)//data trả về là echo
-            {
-                window.location.href = "index.php"; //thành công về lại trang index
-            }
-        });
-    });
-
-</script>
 
 
 <?php

@@ -36,12 +36,10 @@
                     }
                     ?>
                     <li style="margin-left: 15px">
-
-                        <input type="text" placeholder="Search.." id="txtsearch"
-                               style="margin-top: 15px; border-radius:0px">
-                        <button type="button" style="margin-top: 5px ; margin-left: -3px" id="search"><i
-                                    class="fa fa-search" style="width:25px; height:20px"></i></button>
-
+                        <input type="text" placeholder="Search.." id="txtsearch" style="margin-top: 15px; border-radius:0px">
+                        <button type="button" style="margin-top: 5px ; margin-left: -3px" id="search">
+                            <i class="fa fa-search" style="width:25px; height:20px"></i>
+                        </button>
                     </li>
                     <li class="dropdown profile">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -49,21 +47,24 @@
                             if (isset($_SESSION["loginuser"])) {
                                 echo $_SESSION["loginuser"];
                             }
-                            ?><span class="caret"></span></a>
+                            ?>
+                            <span class="caret"></span></a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li class="profile-img">
                                 <img src="images/128px.png" class="profile-img" style="margin-left: 25px;">
                             </li>
                             <li>
                                 <div class="profile-info">
-                                    <div class="btn-group margin-bottom-2x" role="group"><a href="thongtin.php"
-                                                                                            target="_blank">
-                                            <button type="button" class="btn btn-default"><i class="fa fa-user"></i>Thông
-                                                tin
+                                    <div class="btn-group margin-bottom-2x" role="group">
+                                        <a href="thongtin.php" target="_blank">
+                                            <button type="button" class="btn btn-default">
+                                                <i class="fa fa-user"></i>
+                                                Thông tin
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-default" id="btn-logout"><i
-                                                    class="fa fa-sign-out"></i> Logout
+                                        <button type="button" class="btn btn-default" id="btn-logout">
+                                            <i class="fa fa-sign-out"></i>
+                                            Logout
                                         </button>
                                     </div>
                                 </div>
@@ -90,7 +91,6 @@
             <?php
             HienThiPhimSlide();
             ?>
-
             <!-- End first slide -->
             <!-- Start third slide -->
             <!-- Start cSlide navigation arrows -->
@@ -110,19 +110,16 @@
         <div class="title">
             <h1>Mua vé ngay</h1>
             <!-- Section's title goes here -->
-
             <select id="sl-phim">
                 <option value="default">Phim</option>
                 <?php
                 HienThiTenPhim();
                 ?>
             </select>
-
             <select id="sl-rap">
                 <option value="default">Rạp</option>
                 <!--code bên custome.js để hiện option XemRap()-->
             </select>
-
             <select id="sl-ngaychieu">
                 <option value="default">Ngày xem</option>
                 <!--code bên custome.js để hiện option -->
@@ -131,13 +128,8 @@
             <select id="sl-giochieu">
                 <option value="default">Suất chiếu</option>
                 <!--code bên custome.js để hiện option-->
-
             </select>
-
-            <input type="button" class="btn btn-success" id="btn-datve" name="btn-datve" value="Đặt vé"
-                   style=" margin-bottom: 10px">
-
-
+            <input type="button" class="btn btn-success" id="btn-datve" name="btn-datve" value="Đặt vé" style=" margin-bottom: 10px">
             <!--Simple description for section goes here. -->
         </div>
     </div>
@@ -149,7 +141,6 @@
     <div class="container">
         <div class=" title">
             <h1>Chọn Phim</h1>
-
         </div>
         <ul class="nav nav-pills">
             <li class="filter" data-filter="now">
@@ -277,39 +268,25 @@
             </div>
             <ul class="row client-slider" id="clint-slider">
                 <li>
-
                     <img src="images/clients/ClientLogo01.png" alt="client logo 1">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo02.png" alt="client logo 2">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo03.png" alt="client logo 3">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo04.png" alt="client logo 4">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo05.png" alt="client logo 5">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo02.png" alt="client logo 6">
-
                 </li>
                 <li>
-
                     <img src="images/clients/ClientLogo04.png" alt="client logo 7">
-
                 </li>
             </ul>
         </div>
@@ -334,7 +311,6 @@ function HienThiTenPhim()
     $today = date("Y-m-d");//get ngày hiện tại
     $today = strtotime($today);//get 1 số tính toán ngày hiện tại
     $time = strtotime(date("H:i"));//get 1 số là giờ hiện tại
-
     $truyvan = "SELECT * FROM schedule";
     $ketqua = $db->query($truyvan);
     if ($ketqua) {
@@ -359,10 +335,8 @@ function HienThiTenPhim()
         }
     }
     $arrMaPhim = array_unique($arrMaPhim);//xóa trùng mã phim để k lặp lại
-
     foreach ($arrMaPhim as $key) { // duyệt mảng và xuất phim ra
         $truyvan2 = 'SELECT MAPHIM,TENPHIM FROM movie WHERE MAPHIM = ' . $key . ';';
-
         $ketqua2 = $db->query($truyvan2);
         foreach ($ketqua2->fetchAll() as $dong2) {
             echo "<option value='" . $dong2["MAPHIM"] . "'>" . $dong2["TENPHIM"] . " </option>";
@@ -382,26 +356,21 @@ function HienThiPhimAll()
     $db = DB::getInstance(); // đối tượng kết nối csdl
     $today = date("Y-m-d"); // xét ngày hiện tại
     $today = strtotime($today); // lấy ra dãy số ngày hiện tại
-
     $time = strtotime(date("H:i")); // lấy ra chuỗi giờ hiện tại
     $truyvan = "SELECT * FROM movie";// select bảng phim
     $ketqua = $db->query($truyvan); // thực hiện query
-    if ($ketqua) // nếu kết quả true
-    {
+    // nếu kết quả true
+    if ($ketqua) {
         //xuất ra giao diện trang index
         foreach ($ketqua->fetchAll() as $dong) {
             $another_date = strtotime($dong["NGAYBDCHIEU"]);
-            if ($another_date <= $today + 172800) // phim now
-            {
-
+            // phim now
+            if ($another_date <= $today + 172800) {
                 $truyvan1 = "SELECT * FROM schedule WHERE MAPHIM = " . $dong["MAPHIM"];
                 $ketqua1 = $db->query($truyvan1);
                 foreach ($ketqua1 as $dong1) {
-                    # code...
                     $another_date1 = strtotime($dong1["NGAYCHIEU"]);
                     $another_time = strtotime($dong1["GIOCHIEU"]);
-
-
                     if ($another_date1 > $today) {
                         $truyvan1 = 'SELECT MAPHIM FROM movie WHERE MAPHIM = ' . $dong["MAPHIM"] . ';';
                         $ketqua1 = $db->query($truyvan1);
@@ -409,34 +378,24 @@ function HienThiPhimAll()
                             array_push($arrMaPhimNow, $dong1["MAPHIM"]);
                         }
                     }
-
                 }
-            } else //phim future
-
-            {
+            } else { //phim future
                 $truyvan1 = "SELECT * FROM schedule WHERE MAPHIM = " . $dong["MAPHIM"];
                 $ketqua1 = $db->query($truyvan1);
                 foreach ($ketqua1 as $dong1) {
-                    # code...
                     $another_date1 = strtotime($dong1["NGAYCHIEU"]);
                     $another_time = strtotime($dong1["GIOCHIEU"]);
                     if ($another_date1 >= $today) {
-
                         $truyvan1 = 'SELECT MAPHIM FROM movie WHERE MAPHIM = ' . $dong["MAPHIM"] . ';';
                         $ketqua1 = $db->query($truyvan1);
                         foreach ($ketqua1->fetchAll() as $dong1) {
                             array_push($arrMaPhimFuture, $dong1["MAPHIM"]);
                         }
                     }
-
                 }
             }
-
-
         }
     }
-
-
     $arrMaPhimNow = array_unique($arrMaPhimNow);//mảng chứa phim đang chiếu
     $arrMaPhimFuture = array_unique($arrMaPhimFuture); //mảng chứa phim sắp chiêus
     //duyệt show phim
@@ -445,45 +404,40 @@ function HienThiPhimAll()
         $kq = $db->query($truyvan2);
         foreach ($kq->fetchAll() as $dong) {
             echo '<li class="span4 mix now">
-                            <div class="thumbnail">
-                                <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
-                                <p>' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
-                                <div class="mask">
-                                <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
-                                 </div>
-                        </li>';
-
+                      <div class="thumbnail">
+                          <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
+                          <a href="#single-project" class="show_hide more" rel="#slidingDiv">
+                              <i class="icon-plus"></i>
+                          </a>
+                          <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
+                          <p>' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
+                          <div class="mask">
+                              <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
+                          </div>
+                      </div>
+                  </li>';
         }
     }
-
     foreach ($arrMaPhimFuture as $key1) {
         $truyvan2 = 'SELECT * FROM movie WHERE MAPHIM = ' . $key1 . ';';
         $kq = $db->query($truyvan2);
         foreach ($kq->fetchAll() as $dong) {
-
             echo '<li class="span4 mix future">
-                                   <div class="thumbnail">
-                                <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
-                                <p >' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
-                                <div class="mask">
-                                <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
-                                 </div>
-                                </li>';
+                     <div class="thumbnail">
+                         <img src="../admin/public/img/' . $dong["IMAGE"] . '" alt="' . $dong["MAPHIM"] . '">
+                         <a href="#single-project" class="show_hide more" rel="#slidingDiv">
+                             <i class="icon-plus"></i>
+                         </a>
+                         <h3>' . "Tên phim: " . $dong["TENPHIM"] . '</h3>
+                         <p >' . "Thời lượng: " . $dong["THOILUONG"] . "phút" . '</p>
+                         <div class="mask">
+                             <p style = "display :none;">' . $dong["MAPHIM"] . '</p>
+                         </div>
+                     </div>
+                </li>';
         }
     }
-
-
-}
-
-;
+};
 
 //ajax?
 //chạy slide indexx
@@ -499,89 +453,14 @@ function HienThiPhimSlide() //phim hiện trên slide
                         <h2 class="fittext2">WELCOME TO CINEMA</h2>
                         <h4>' . $dong["TENPHIM"] . '</h4>
                         <p>' . $dong["MIEUTA"] . '</p>
-                       
                         <div class="da-img">
                             <img src="../admin/public/img/' . $dong["IMAGE"] . '" width="320">
                         </div>
-                        </div>';
+                  </div>';
         }
     }
-
-
-}
-
-;
+};
 ?>
-
-
-<script>
-    //script gọi ajax các chức năng là các action hàm bên user_function.php
-    //bắt lỗi chưa nhập thông tin
-    $("#sl-ngaychieu").click(function () {
-        $("#btn-datve").click(function () {
-
-            $.ajax({
-                url: "../user/user_function.php",
-                type: "POST",
-                //dataType: "html",
-                data: {
-                    action: "LoadManHinh"
-                },
-                success: function (data)//data trả về là echo
-                {
-
-                    window.location.href = 'datvebuoc2.php';
-                }
-            });
-        });
-    });
-
-
-    //hàm tìm kiếm phim
-    $("#search").click(function () {
-
-        if ($("#txtsearch").val() != "") {
-            var txtsearch = $("#txtsearch").val();
-            $.ajax({
-                url: "../user/user_function.php",
-                type: "POST",
-                //dataType: "html",
-                data: {
-                    action: "TimKiem",
-                    txtsearch: txtsearch
-                },
-                success: function (data)//data trả về là echo
-                {
-                    window.location.href = data;
-                    // console.log(data);
-                }
-            });
-        }
-        else {
-
-        }
-
-    });
-
-    //hàm thoát ajax
-    $("#btn-logout").click(function () {
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            //dataType: "html",
-            data: {
-                action: "LogOut",
-
-            },
-            success: function (data)//data trả về là echo
-            {
-                window.location.href = "index.php";
-            }
-        });
-    });
-
-
-</script>
 
 <?php
 //log out thoát user

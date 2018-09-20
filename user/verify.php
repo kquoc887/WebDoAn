@@ -2,10 +2,10 @@
 <!--file xác nhận email-->
 <!DOCTYPE html>
 <html>
-<?php
-       include("header.html");
-      include("../libs/config.php");
-       ?>
+      <?php
+           include("header.html");
+          include("../libs/config.php");
+      ?>
 <head>
     <title>Trang Verify</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,60 +52,49 @@
         </div>
     </div>
     <!-- Javascript Libs -->
-    <script type="text/javascript" src="../admin/lib/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/Chart.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/bootstrap-switch.min.js"></script>
-    
-    <script type="text/javascript" src="../admin/lib/js/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/select2.full.min.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/ace/ace.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/ace/mode-html.js"></script>
-    <script type="text/javascript" src="../admin/lib/js/ace/theme-github.js"></script>
+    <script  src="../admin/lib/js/jquery.min.js"></script>
+    <script  src="../admin/lib/js/bootstrap.min.js"></script>
+    <script  src="../admin/lib/js/Chart.min.js"></script>
+    <script  src="../admin/lib/js/bootstrap-switch.min.js"></script>
+    <script  src="../admin/lib/js/jquery.matchHeight-min.js"></script>
+    <script  src="../admin/lib/js/jquery.dataTables.min.js"></script>
+    <script  src="../admin/lib/js/dataTables.bootstrap.min.js"></script>
+    <script  src="../admin/lib/js/select2.full.min.js"></script>
+    <script  src="../admin/lib/js/ace/ace.js"></script>
+    <script  src="../admin/lib/js/ace/mode-html.js"></script>
+    <script  src="../admin/lib/js/ace/theme-github.js"></script>
     <!-- Javascript -->
     <script type="text/javascript" src="../admin/js/app.js"></script>
 </body>
-
 </html>
 <?php
-    function UpdateUser(){
-        $email = $_GET['Email'];
-        $email = base64_encode($email);
-        $activation_code = $_GET["activation_code"];
-        if(isset($email)&&isset($activation_code))
-        {
+function UpdateUser()
+{
+    $email = $_GET['Email'];
+    $email = base64_encode($email);
+    $activation_code = $_GET["activation_code"];
+    if (isset($email) && isset($activation_code)) {
+        $db = DB::getInstance();
+        $truyvan = "SELECT * FROM users WHERE EMAIL = '" . $email . "';";
+        $ketqua = $db->query($truyvan);
+        if ($ketqua) {
+            $truyvan1 = "UPDATE users SET remember_token = '" . $activation_code . "' WHERE EMAIL = '" . $email . "';";
+            $ketqua1 = $db->query($truyvan1);
+            if ($ketqua1) {
+                echo "Đăng kí thành công!";
 
-             $db= DB::getInstance();
-             $truyvan = "SELECT * FROM users WHERE EMAIL = '".$email."';";
-             $ketqua = $db->query($truyvan);
-             if($ketqua)
-             {
-                 $truyvan1 = "UPDATE users SET remember_token = '".$activation_code."' WHERE EMAIL = '".$email."';";
-                $ketqua1 = $db->query($truyvan1);
-                if($ketqua1)
-                {
-                    echo "Đăng kí thành công!";
-
-                }
-                else
-                    echo "Lỗi";
-             }
-             else
-             {
-                 echo " <script> $('#btn-datve').click(function(){
+            } else {
+                echo "Lỗi";
+            }
+        } else {
+            echo " <script> $('#btn-datve').click(function(){
                         window.location.href='error.php';
                         }); </script>";
-             }
         }
-        else
-        {
-             echo " <script> $('#btn-datve').click(function(){
+    } else {
+        echo " <script> $('#btn-datve').click(function(){
                     window.location.href='error.php';
                     }); </script>";
-        }
-
     }
-   
+}
 ?>

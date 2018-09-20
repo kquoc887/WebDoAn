@@ -86,39 +86,33 @@ session_start(); //khởi tạo session
                     <th>Giờ chiếu</th>
                     <th> Mã đặt chỗ</th>
                     <th>Tùy chọn</th>
-                <tr>
-                    <tbody>
-
+                </tr>
+                <tbody>
                     <?php
                     HienThiPhim();
                     ?>
-
-
-                    </tbody>
-
+                </tbody>
             </table>
         </div>
     </div>
 </div>
 
 <!-- Javascript Libs -->
-<script type="text/javascript" src="../libs/lib/js/jquery.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/Chart.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/bootstrap-switch.min.js"></script>
-
-<script type="text/javascript" src="../libs/lib/js/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/select2.full.min.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/ace.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/mode-html.js"></script>
-<script type="text/javascript" src="../libs/lib/js/ace/theme-github.js"></script>
+<script  src="../libs/lib/js/jquery.min.js"></script>
+<script  src="../libs/lib/js/bootstrap.min.js"></script>
+<script  src="../libs/lib/js/Chart.min.js"></script>
+<script  src="../libs/lib/js/bootstrap-switch.min.js"></script>
+<script  src="../libs/lib/js/jquery.matchHeight-min.js"></script>
+<script  src="../libs/lib/js/jquery.dataTables.min.js"></script>
+<script  src="../libs/lib/js/dataTables.bootstrap.min.js"></script>
+<script  src="../libs/lib/js/select2.full.min.js"></script>
+<script  src="../libs/lib/js/ace/ace.js"></script>
+<script  src="../libs/lib/js/ace/mode-html.js"></script>
+<script  src="../libs/lib/js/ace/theme-github.js"></script>
 <!-- Javascript -->
-<script type="text/javascript" src="../libs/js/app.js"></script>
-
+<script  src="../libs/js/app.js"></script>
+<script  src="js/custom.js"></script>
 </body>
-
 </html>
 
 <?php
@@ -205,96 +199,11 @@ function HienThiPhim()
                 }
             }
         }
-
     }
 }
 
 ?>
-<script type="text/javascript">
-    //chhuyen sang trang log out tai khoan
-    $("#btn-logout").click(function () {
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            //dataType: "html",
-            data: {
-                action: "LogOut", //thoát gọi sang ajax xử lý
 
-            },
-            success: function (data)//data trả về là echo
-            {
-                window.location.href = "index.php";
-            }
-        });
-    });
-    //truyền data từ thongtin.php sang trang suaghe.php
-    $(".btn-sua").click(function () {
-        var str = $(this).val();
-
-        var strSplit = str.split("/");
-        var madatchosua = strSplit[0];
-        var maphim = strSplit[1];
-        var marap = strSplit[2];
-        var ngaychieu = strSplit[3];
-        var suatchieu = strSplit[4];
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            data: {
-                action: "SuaGhe",
-                madatchosua: madatchosua,
-                maphim: maphim,
-                marap: marap,
-                ngaychieu: ngaychieu,
-                suatchieu: suatchieu
-            },
-            success: function (data)//data trả về là echo
-            {
-                window.location.href = "suaphim.php";
-                //console.log(data);
-            }
-        });
-    });
-
-    //load man hinh 2 để xác định ghế k bị lỗi session
-    $(".btn-sua").click(function () {
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            data: {
-                action: "LoadManHinh2",
-
-            },
-            success: function (data)//data trả về là echo
-            {
-                // window.location.href= "suaphim.php";
-            }
-        });
-    });
-    //truyền data từ thongtin.php sang trang xoaphim.php
-    $("#btn-xacnhan").click(function () {
-        var password = $("#password").val();
-        var madatcho = $(".btn-xoa").val();
-
-        $.ajax({
-            url: "../user/user_function.php",
-            type: "POST",
-            //dataType: "html",
-            data: {
-                action: "DangNhapXoa",
-                password: password,
-                madatcho: madatcho
-            },
-            success: function (data)//data trả về là echo
-            {
-                alert(data);
-                window.location.href = "thongtin.php";
-            }
-        });
-    });
-
-
-</script>
 <?php
 if (isset($_SESSION["loginuser"])) {
     echo '<script> $(".dropdown").show();</script>';

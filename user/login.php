@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php
+    <?php
        include("header.html"); //import layout header
-      
-       ?>
+    ?>
 <head>
     <title>Trang Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,70 +96,13 @@
     <script type="text/javascript" src="../libs/lib/js/ace/theme-github.js"></script>
     <!-- Javascript -->
     <script type="text/javascript" src="../libs/js/app.js"></script>
+     <script type="text/javascript" src="js/custom.js"></script>
 </body>
 
 </html>
 <!--validator bắt lỗi các text box-->
 <script type="text/javascript">
-    function validateForm() { //email
-            var x = document.forms["Fr-dangnhap"]["email"].value;
-            var atpos = x.indexOf("@");
-            var dotpos = x.lastIndexOf(".");
-            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-                alert("Địa chỉ email không hợp lệ!!");
-                return false;
-            }
-            else
-              return true;
-        }
-    function validateTextBox()
-    {
-    
-            var email = $("#email").val();
-            var password = $("#password").val();
-            if(email == "" || password == "")
-            {
-                alert("Không được để trống!");
-                return false;
-            }
-            else
-                return true;
-    }
 
-
- $("#btn-login").click(function(){
-        if(validateForm() && validateTextBox())
-          {
-           
-            var email = $("#email").val();
-            var password = $("#password").val();
-            $.ajax({
-                url : "../user/user_function.php",
-                type : "POST",
-                //dataType: "html", 
-                data : {
-                  action:"DangNhap",
-                  email : email,
-                  password: password  
-              
-            },
-            success: function(data)//data trả về là echo
-            {  
-                var trim = $.trim(data);
-                if(trim == "index.php")
-                {
-                    window.location.href = trim;
-                     
-                }
-                else
-                {
-                    $("#info").empty();
-                   $("#info").append(data);
-                }
-            }
-            });
-          } 
-        });
 
 </script>
 

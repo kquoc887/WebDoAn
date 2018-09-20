@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-<?php
+    <?php
        include("header.html");
-
     ?>
 <head>
     <title>Trang Login</title>
@@ -110,67 +109,7 @@
     <script type="text/javascript" src="../libs/lib/js/ace/theme-github.js"></script>
     <!-- Javascript -->
     <script type="text/javascript" src="../libs/js/app.js"></script>
-
+    <script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
-<script type="text/javascript">
-
-    //Xét validate
-    function validateForm() { //email
-            var x = document.forms["Fr-dangky"]["email"].value;
-            var atpos = x.indexOf("@");
-            var dotpos = x.lastIndexOf(".");
-            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-                alert("Địa chỉ email không hợp lệ!!");
-                return false;
-            }
-            else
-              return true;
-        }
-    function validateTextBox() //textbox user & email 
-    {
-            var user = $("#user").val();
-            var email = $("#email").val();
-            var password = $("#password").val();
-            if(user == "" || email == "" || password == "")
-            {
-                alert("Không được để trống!");
-                return false;
-            }
-            else
-                return true;
-    }
-
-    //button đăng ký thực hiện ajax bên file user_function
- $("#btn-dangky").click(function(){
-        if(validateForm() && validateTextBox())
-          {
-            var  user= $("#user").val();
-            var email = $("#email").val();
-            var password = $("#password").val();
-            $.ajax({
-            url : "../user/user_function.php", // file xử lý hàm
-            type : "POST", //loại gửi dữ liệu
-            //dataType: "html",  
-            data : {
-              action:"DangKy", // hàm thực hiện bên user_function
-              user: user, // dữ liệu gửi đi
-              email : email,
-              password: password
-              
-              
-            },
-            success: function(data)//data trả về là echo
-            {
-                
-                $("#info").empty(); // xuất ra id info
-                $("#info").append(data);
-                
-             // window.location.href="login.php";
-            }
-            });
-          } 
-        });
-
-</script>
 
