@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="472105ed-5ec7-4667-a6bd-36b00f4a6498" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/WebDoAn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebDoAn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/dangki.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/dangki.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/datvebuoc1.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/datvebuoc1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/datvebuoc2.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/datvebuoc2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/suaphim.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/suaphim.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/thongtin.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/thongtin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/timkiem.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/timkiem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/verify.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/admin/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -30,15 +21,16 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="2" />
           <entry key="js" value="1" />
-          <entry key="php" value="12" />
+          <entry key="php" value="14" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
@@ -46,32 +38,41 @@
         <counts>
           <entry key="HTML" value="2" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="12" />
+          <entry key="PHP" value="14" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1211" />
-          <entry key="php" value="364" />
+          <entry key="js" value="1221" />
+          <entry key="php" value="371" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="5" />
-          <entry key="JavaScript" value="1211" />
-          <entry key="PHP" value="359" />
+          <entry key="JavaScript" value="1221" />
+          <entry key="PHP" value="366" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
-              <caret line="623" column="17" lean-forward="true" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
+              <caret line="665" column="7" selection-start-line="665" selection-start-column="7" selection-end-line="665" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user/suaphim.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="202" column="2" selection-start-line="202" selection-start-column="2" selection-end-line="202" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -79,15 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/datvebuoc2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="230" column="2" lean-forward="true" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="185">
+              <caret line="231" selection-start-line="231" selection-end-line="231" />
             </state>
           </provider>
         </entry>
@@ -103,13 +97,13 @@
         <option value="$PROJECT_DIR$/user/index.php" />
         <option value="$PROJECT_DIR$/user/dangki.php" />
         <option value="$PROJECT_DIR$/user/login.php" />
-        <option value="$PROJECT_DIR$/user/suaphim.php" />
         <option value="$PROJECT_DIR$/user/thongtin.php" />
         <option value="$PROJECT_DIR$/user/timkiem.php" />
         <option value="$PROJECT_DIR$/user/verify.php" />
         <option value="$PROJECT_DIR$/user/datvebuoc1.php" />
-        <option value="$PROJECT_DIR$/user/datvebuoc2.php" />
         <option value="$PROJECT_DIR$/user/js/custom.js" />
+        <option value="$PROJECT_DIR$/user/datvebuoc2.php" />
+        <option value="$PROJECT_DIR$/user/suaphim.php" />
       </list>
     </option>
   </component>
@@ -210,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,6 +220,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,23 +252,20 @@
       <option name="presentableId" value="Default" />
       <updated>1537437039146</updated>
       <workItem from="1537437045626" duration="4406000" />
+      <workItem from="1537513593363" duration="2090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4406000" />
+    <option name="totallyTimeSpent" value="6496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -282,10 +273,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,18 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/suaphim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="204" column="4" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -367,31 +351,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="217" column="2" selection-start-line="217" selection-start-column="2" selection-end-line="217" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/datvebuoc2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="230" column="2" lean-forward="true" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
-          <caret line="623" column="17" lean-forward="true" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
+          <caret line="665" column="7" selection-start-line="665" selection-start-column="7" selection-end-line="665" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/datvebuoc2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/suaphim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="202" column="2" selection-start-line="202" selection-start-column="2" selection-end-line="202" selection-end-column="2" />
         </state>
       </provider>
     </entry>

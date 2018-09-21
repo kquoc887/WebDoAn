@@ -161,7 +161,7 @@
             <div style="padding-left: 100px">
                 <?php
                 $seat = array("A", "B", "C", "D", "E", "F", "G", "H", " J", "K");
-                $classSeat = "btn-seat seat-disabled";
+                $classSeat = "btn-seat-edit seat-disabled";
                 for ($i = 0; $i < 10; $i++) {
                     echo "<span style=" . '"' . "margin-right:20px;" . '">' . $seat[$i] . "</span>";
                     echo "<span>";
@@ -201,9 +201,6 @@
 <?php
 include("footer.html");
 ?>
-<script type="text/javascript">
-
-</script>
 
 <?php
 if (isset($_SESSION["loginuser"]))

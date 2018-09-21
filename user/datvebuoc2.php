@@ -229,11 +229,7 @@
 <?php
 include("footer.html");
 ?>
-<script type="text/javascript">
 
-
-
-</script>
 
 <?php
 //login

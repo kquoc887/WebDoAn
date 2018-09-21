@@ -308,7 +308,7 @@ $(document).ready(function () {
     ///////////////////////////////////////////////JS trang suaphim.php/////////////////////////////////////////////////////////////
 //chọn ghế
 //làm bt như bên index k chạy f gọi kiểu này => dynamic control
-    $(document).on('click', '.btn-seat', function () {
+    $(document).on('click', '.btn-seat-edit', function () {
         $(this).toggleClass('highlight');
         $(this).toggleClass('seat-disabled');
         var data = $(this).val();
@@ -332,11 +332,10 @@ $(document).ready(function () {
         } else {
             $(".seat-disabled").removeAttr('disabled');
         }
-
     });
 
 
-//xu ly lenh updata
+    //xu ly lenh updata
     $("#btn-suaghe").click(function () {
         //mảng chứa tên ghế
         var strr = $("#ghe-buoc2").text();
@@ -588,7 +587,7 @@ $(document).ready(function () {
         }
 
     });
-// click button thanh toán và thực hiện hàm sau
+    // click button thanh toán và thực hiện hàm sau
     $("#btn-thanhtoan").click(function () {
         if (validateForm() && validateCheckBox()) {
             //dữ liệu
@@ -618,21 +617,19 @@ $(document).ready(function () {
                         macombo: macombo
 
                     },
-                    success: function (data)//data trả về là echo
-                    {
+                    //data trả về là echo
+                    success: function (data) {
                         window.location.href = "payment.php";
                         // console.log(data);
                     }
                 });
-            }
-            else {
+            } else {
                 alert("Bạn chưa chọn chỗ ngồi!");
-
             }
         }
     });
 
-//bắt lỗi các text box cho phù hợp
+    //bắt lỗi các text box cho phù hợp
     function validateForm() { //email
         var x = document.forms["Fr-thanhtoan"]["email"].value;
         var atpos = x.indexOf("@");
@@ -652,7 +649,7 @@ $(document).ready(function () {
         }
         return true;
     }
-//log out khi đăng nhập
+    //log out khi đăng nhập
     $("#btn-logout").click(function () {
         $.ajax({
             url: "../user/user_function.php",
